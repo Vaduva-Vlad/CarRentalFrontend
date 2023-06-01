@@ -9,12 +9,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { CarListComponent } from './car-list/car-list.component';
 import { CarListItemComponent } from './car-list-item/car-list-item.component';
+import { CarMoreDetailsComponent } from './car-more-details/car-more-details.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CarListComponent,
-    CarListItemComponent
+    CarListItemComponent,
+    CarMoreDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,8 @@ import { CarListItemComponent } from './car-list-item/car-list-item.component';
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

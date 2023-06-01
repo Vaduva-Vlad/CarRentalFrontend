@@ -1,0 +1,11 @@
+<form class="my-form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="licensePlate">License Plate:</label>
+      <input type="text" id="licensePlate" name="licensePlate" [(ngModel)]="licensePlate" required>
+    </div>
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="price" [(ngModel)]="price" required>
+    </div>
+    <button type="submit" class="btn-submit">Submit</button>
+  </form>
