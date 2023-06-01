@@ -11,6 +11,7 @@ import { CarListComponent } from './car-list/car-list.component';
 import { CarListItemComponent } from './car-list-item/car-list-item.component';
 import { CarMoreDetailsComponent } from './car-more-details/car-more-details.component';
 import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatToolbarModule,
     FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

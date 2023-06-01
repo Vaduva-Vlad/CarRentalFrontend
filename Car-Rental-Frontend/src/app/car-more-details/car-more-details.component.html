@@ -1,11 +1,17 @@
+<mat-card style="margin:20px">
 <form class="my-form" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="licensePlate">License Plate:</label>
-      <input type="text" id="licensePlate" name="licensePlate" [(ngModel)]="licensePlate" required>
+      <mat-form-field>
+        <mat-label for="licensePlate">License Plate</mat-label>
+        <input matInput type="text" id="licensePlate" name="licensePlate" [(ngModel)]="licensePlate" required>
+      </mat-form-field>
     </div>
     <div class="form-group">
-      <label for="price">Price:</label>
-      <input type="number" id="price" name="price" [(ngModel)]="price" required>
+      <mat-form-field>
+        <mat-label for="price">Price</mat-label>
+        <input matInput type="number" id="price" name="price" [(ngModel)]="price" required>
+      </mat-form-field>
     </div>
-    <button type="submit" class="btn-submit">Submit</button>
+    <button mat-raised-button type="submit" class="btn-submit">Submit</button>
   </form>
+</mat-card>
