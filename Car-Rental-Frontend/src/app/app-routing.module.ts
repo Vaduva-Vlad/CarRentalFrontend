@@ -6,7 +6,7 @@ import { CarMoreDetailsComponent } from './car-more-details/car-more-details.com
 const routes: Routes = [
   {path: 'cars', component: CarListComponent},
   {path: '',   redirectTo: '/cars', pathMatch: 'full' },
-  {path: 'car/:id', component: CarMoreDetailsComponent}
+  {path: 'cars/:id', component: CarMoreDetailsComponent}
 ];
 
 @NgModule({

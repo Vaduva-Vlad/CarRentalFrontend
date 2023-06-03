@@ -16,7 +16,7 @@ export class CarListItemComponent implements OnInit {
   redirectToDetails() {
     // Perform the redirect to the details route
     if (this.car?.id) {
-      this.router.navigate([`/car/${this.car.id}`]);
+      this.router.navigate([`/cars/${this.car.id}`]);
     }
   }
   ngOnInit(): void {

@@ -1,17 +1,35 @@
-<mat-card style="margin:20px">
-<form class="my-form" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <mat-form-field>
-        <mat-label for="licensePlate">License Plate</mat-label>
-        <input matInput type="text" id="licensePlate" name="licensePlate" [(ngModel)]="licensePlate" required>
-      </mat-form-field>
-    </div>
-    <div class="form-group">
-      <mat-form-field>
-        <mat-label for="price">Price</mat-label>
-        <input matInput type="number" id="price" name="price" [(ngModel)]="price" required>
-      </mat-form-field>
-    </div>
+<form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <mat-form-field>
+      <mat-label for="licensePlate">License Plate</mat-label>
+      <input matInput formControlName="licensePlate" id="licensePlate" required>
+      <mat-error *ngIf="carForm.get('licensePlate')?.errors?.['required']">License Plate is required</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field>
+      <mat-label for="price">Price</mat-label>
+      <input matInput formControlName="price" id="price" required>
+      <mat-error *ngIf="carForm.get('price')?.errors?.['required']">Price is required</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field>
+      <mat-label for="images">Image Gallery</mat-label>
+      <div>
+        <mat-list>
+          <mat-list-item *ngFor="let imageControl of images.controls; let i = index">
+            <img [src]="imageControl.value.url" alt="Gallery Image" class="gallery-image">
+            <button mat-icon-button (click)="deleteImage(i)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-list-item>
+        </mat-list>
+        <input type="file" accept="image/*" (change)="onFileSelected($event)" />
+      </div>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
     <button mat-raised-button type="submit" class="btn-submit">Submit</button>
-  </form>
-</mat-card>
+  </div>
+</form>

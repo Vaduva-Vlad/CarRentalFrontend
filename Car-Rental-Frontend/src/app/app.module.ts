@@ -12,6 +12,10 @@ import { CarListItemComponent } from './car-list-item/car-list-item.component';
 import { CarMoreDetailsComponent } from './car-more-details/car-more-details.component';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -29,7 +33,12 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatToolbarModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatListModule,
+    MatIconModule,
+    ReactiveFormsModule ,
   ],
   providers: [],
   bootstrap: [AppComponent]

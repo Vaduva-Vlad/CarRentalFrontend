@@ -1,0 +1,4 @@
+<div class="picture-input-container" [class.picture-input-focused]="focused">
+    <input type="file" id="{{ id }}" [required]="required" (change)="onFileSelected($event)" (focus)="onInputFocus()" (blur)="onInputBlur()" />
+    <label [attr.for]="id" class="picture-input-label" [class.picture-input-floating]="shouldLabelFloat">{{ placeholder }}</label>
+  </div>
