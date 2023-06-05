@@ -9,14 +9,13 @@ import { HttpClient } from '@angular/common/http';
 export class CarService {
 
   constructor(private http: HttpClient) { }
-  url="http://localhost:8000/cars"
-  cars:Car[]=[{"id":1,"license_plate":"TM50SCA","price":100,"user":1},{"id":2,"license_plate":"B60BGF","price":200,"user":1}]
+  url="http://localhost/CarRentalApi/public/api/cars"
 
-  getCars():Observable<Car>{
-    return this.http.get<Car>(this.url)
+  getCars():Observable<any>{
+    return this.http.get<any>(this.url)
   }
 
-  getCar(id:number):Observable<Car>{
-    return of(this.cars[id-1])
+  getCar(id:number):Observable<any>{
+    return this.http.get<any>(`${this.url}/${id}`)
   }
 }

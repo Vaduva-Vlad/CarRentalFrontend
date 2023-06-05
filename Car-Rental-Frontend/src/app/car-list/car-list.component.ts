@@ -19,6 +19,6 @@ export class CarListComponent implements OnInit {
   }
 
   getCars(){
-    this.carService.getCars().subscribe(result=>console.log(result))
+    this.carService.getCars().subscribe(result=>this.cars=result['data'])
   }
 }

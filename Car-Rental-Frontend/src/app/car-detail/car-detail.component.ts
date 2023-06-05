@@ -23,7 +23,7 @@ export class CarDetailComponent implements OnInit {
 
   getCar(){
     let id=Number(this.route.snapshot.paramMap.get('id'));
-    this.carService.getCar(id).subscribe(result=>this.car=result)
+    this.carService.getCar(id).subscribe(result=>this.car=result['data'])
   }
 
   openRentalForm(){
