@@ -16,6 +16,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { CarDetailComponent } from './car-detail/car-detail.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { RentalFormComponent } from './rental-form/rental-form.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,6 +30,8 @@ import { MatIconModule } from '@angular/material/icon';
     CarListComponent,
     CarListItemComponent,
     CarMoreDetailsComponent,
+    CarDetailComponent,
+    RentalFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +46,11 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     MatListModule,
     MatIconModule,
-    ReactiveFormsModule ,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
