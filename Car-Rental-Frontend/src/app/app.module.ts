@@ -22,6 +22,7 @@ import { RentalFormComponent } from './rental-form/rental-form.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
+import { AddCarComponent } from './add-car/add-car.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     CarMoreDetailsComponent,
     CarDetailComponent,
     RentalFormComponent,
+    AddCarComponent,
   ],
   imports: [
     BrowserModule,
