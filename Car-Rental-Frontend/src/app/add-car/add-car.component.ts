@@ -8,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class AddCarComponent implements OnInit {
 
   constructor() { }
+  file:File|undefined
 
   ngOnInit(): void {
   }
 
+  getFile(event:any){
+    this.file=event.target.files[0]
+    console.log(this.file)
+  }
 }
