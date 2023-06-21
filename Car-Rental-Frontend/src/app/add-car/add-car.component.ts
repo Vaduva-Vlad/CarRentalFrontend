@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarService } from 'src/services/car.service';
 
 @Component({
   selector: 'app-add-car',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private carService:CarService) { }
+  license_plate:string|undefined
+  price:number|undefined
+  model:string|undefined
+  description:string|undefined
   file:File|undefined
 
   ngOnInit(): void {
@@ -15,6 +20,10 @@ export class AddCarComponent implements OnInit {
 
   getFile(event:any){
     this.file=event.target.files[0]
-    console.log(this.file)
+  }
+
+  addCar(){
+    console.log("herer")
+    this.carService.addCar(this.license_plate!,this.price!,this.model!,this.description!,this.file!).subscribe(result=>{console.log(result);console.log("here")})
   }
 }
