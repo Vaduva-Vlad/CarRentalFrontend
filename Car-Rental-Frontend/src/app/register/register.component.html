@@ -1,0 +1,27 @@
+<h2>Înregistrare</h2>
+<mat-form-field>
+    <mat-label>Nume</mat-label>
+    <input matInput [(ngModel)]="name"><br>
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>E-mail</mat-label>
+    <input matInput [(ngModel)]="email"><br>
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Adresă</mat-label>
+    <input matInput [(ngModel)]="address"><br>
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Număr de telefon</mat-label>
+    <input matInput [(ngModel)]="phone"><br>
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Parolă</mat-label>
+    <input matInput [(ngModel)]="password"><br>
+</mat-form-field>
+<br>
+<button mat-raised-button (click)="register()">Terminat</button>

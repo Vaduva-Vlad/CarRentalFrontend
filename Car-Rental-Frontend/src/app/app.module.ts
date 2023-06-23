@@ -23,6 +23,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AddCarComponent } from './add-car/add-car.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { AddCarComponent } from './add-car/add-car.component';
     CarDetailComponent,
     RentalFormComponent,
     AddCarComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
