@@ -13,4 +13,4 @@
     <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
 </mat-form-field>
 <br>
-<button mat-raised-button color="primary">Închiriază</button>
+<button (click)="submit()" mat-raised-button color="primary">Închiriază</button>
