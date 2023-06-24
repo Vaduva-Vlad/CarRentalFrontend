@@ -13,18 +13,22 @@ import { RentalFormComponent } from '../rental-form/rental-form.component';
 })
 export class CarDetailComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute,private carService:CarService,private dialog:MatDialog) { }
+  car: any
 
-  car:Car|undefined
-  @Inject(MAT_DIALOG_DATA) public data: DialogData
+  constructor(
+    private route:ActivatedRoute,
+    private carService:CarService,
+    private dialog:MatDialog,
+     @Inject(MAT_DIALOG_DATA) public ccar: any) { 
+      this.car = ccar.car;
+    }
 
   ngOnInit(): void {
     this.getCar()
   }
 
   getCar(){
-    let id=Number(this.route.snapshot.paramMap.get('id'));
-    this.carService.getCar(id).subscribe(result=>this.car=result['data'])
+    this.carService.getCar(this.car?.id ?? 0).subscribe(result=>this.car=result['data']);
   }
 
   openRentalForm(){
