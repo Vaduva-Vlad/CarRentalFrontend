@@ -24,6 +24,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AddCarComponent } from './add-car/add-car.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { RegisterComponent } from './register/register.component';
     RentalFormComponent,
     AddCarComponent,
     RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
