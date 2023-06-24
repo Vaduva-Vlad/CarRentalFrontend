@@ -10,8 +10,8 @@ export class LoginService {
   constructor(private http: HttpClient) { }
   url="http://localhost/CarRentalApi/public/api/users/login"
 
-  login(data:Object):Observable<Object>{
+  login(data:Object):Observable<any>{
 
-    return this.http.post<Object>(this.url,data);
+    return this.http.post<any>(this.url,data);
   }
 }

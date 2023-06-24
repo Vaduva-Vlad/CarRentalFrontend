@@ -26,7 +26,7 @@ export class CarService {
     formData.append("model",model)
     formData.append("description",description)
     formData.append("image",image)
-    formData.append("user_id",'5')
+    formData.append("user_id",localStorage.getItem('user_id')!)
 
     return this.http.post<string>(this.url,formData)
   }
