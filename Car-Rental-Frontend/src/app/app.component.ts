@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AddCarComponent } from './add-car/add-car.component';
 import { MatDialog } from '@angular/material/dialog';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -19,5 +20,8 @@ export class AppComponent {
 
   openRegisterDialog(){
     this.dialog.open(RegisterComponent)
+  }
+  openLoginDialog(){
+    this.dialog.open(LoginComponent)
   }
 }

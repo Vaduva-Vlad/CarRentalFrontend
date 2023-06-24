@@ -1,1 +1,13 @@
-<p>login works!</p>
+<h2>Înregistrare</h2>
+<br>
+<mat-form-field>
+    <mat-label>E-mail</mat-label>
+    <input matInput [(ngModel)]="email"><br>
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Parolă</mat-label>
+    <input matInput [(ngModel)]="password"><br>
+</mat-form-field>
+<br>
+<button mat-raised-button (click)="login()">Terminat</button>
