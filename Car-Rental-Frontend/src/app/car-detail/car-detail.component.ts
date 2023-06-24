@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 import { Car } from 'src/models/Car';
 import { ActivatedRoute } from '@angular/router';
 import { CarService } from 'src/services/car.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog,MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { RentalFormComponent } from '../rental-form/rental-form.component';
 
 
@@ -16,6 +16,7 @@ export class CarDetailComponent implements OnInit {
   constructor(private route:ActivatedRoute,private carService:CarService,private dialog:MatDialog) { }
 
   car:Car|undefined
+  @Inject(MAT_DIALOG_DATA) public data: DialogData
 
   ngOnInit(): void {
     this.getCar()
