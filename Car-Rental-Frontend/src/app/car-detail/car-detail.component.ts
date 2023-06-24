@@ -32,6 +32,8 @@ export class CarDetailComponent implements OnInit {
   }
 
   openRentalForm(){
-    const dialogRef=this.dialog.open(RentalFormComponent)
+    const dialogRef=this.dialog.open(RentalFormComponent,{
+      data: {car: this.car}
+    })
   }
 }

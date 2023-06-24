@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
+import { ReservationService } from 'src/services/reservation.service';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @Component({
@@ -9,7 +11,11 @@ import {FormGroup, FormControl} from '@angular/forms';
 })
 export class RentalFormComponent implements OnInit {
 
-  constructor() { }
+  car: any
+  constructor(private reservationService:ReservationService, @Inject(MAT_DIALOG_DATA) public ccar: any) {
+    this.car = ccar.car;
+   }
+
   range = new FormGroup({
     start: new FormControl<Date | null>(null),
     end: new FormControl<Date | null>(null),
@@ -19,7 +25,10 @@ export class RentalFormComponent implements OnInit {
   }
 
   submit(){
-    
+    this.reservationService.addReservation(
+      this.range.controls['start'].value ?? new Date()
+    , this.range.controls['end'].value ?? new Date()
+    , this.car.id, '5').subscribe();
   }
 
 }
