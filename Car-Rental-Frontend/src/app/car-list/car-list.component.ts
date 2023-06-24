@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/models/Car';
-import { CarListItemComponent } from '../car-list-item/car-list-item.component';
 import { CarService } from 'src/services/car.service';
 
 @Component({

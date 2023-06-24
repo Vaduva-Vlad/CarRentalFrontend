@@ -23,4 +23,8 @@ export class ReservationService {
 
     return this.http.post<string>(this.url,formData)
   }
+
+  getRezervations():Observable<any>{
+    return this.http.get<string>(this.url);
+  }
 }

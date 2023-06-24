@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from 'src/services/authentication.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ import { AuthenticationService } from 'src/services/authentication.service';
 export class AppComponent {
   title = 'Car-Rental-Frontend';
 
-  constructor(private dialog:MatDialog,private authenticationService:AuthenticationService) { }
+  constructor(private dialog:MatDialog,private authenticationService:AuthenticationService, private location: Location) { }
 
   openAddCarDialog(){
     this.dialog.open(AddCarComponent)
@@ -37,5 +38,10 @@ export class AppComponent {
 
   isAdmin(){
     return this.authenticationService.isAdmin()
+  }
+
+  openReservations(){
+    this.location.go("/reservations");
+    location.reload()
   }
 }

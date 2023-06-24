@@ -1,15 +1,16 @@
 <mat-toolbar color="primary">
   <span style="margin-right:10px" >Car Rental</span>
   <div *ngIf="isAdmin()">
-    <button mat-raised-button color="accent" (click)="openAddCarDialog()" style="margin-right:10px">Adăugare mașină</button>
+  <button mat-raised-button color="accent" (click)="openAddCarDialog()" style="margin-right:10px">Adăugare mașină</button>
   </div>
   <div *ngIf="!isLoggedIn()">
-    <button mat-raised-button style="margin-right:10px" (click)="openRegisterDialog()">Înregistrare</button>
-    <button mat-raised-button style="margin-right:10px" (click)="openLoginDialog()">Autentificare</button>
+  <button mat-raised-button style="margin-right:10px" (click)="openRegisterDialog()">Înregistrare</button>
+  <button mat-raised-button style="margin-right:10px" (click)="openLoginDialog()">Autentificare</button>
   </div>
   <div *ngIf="isLoggedIn()">
     <button mat-raised-button style="margin-right:10px" (click)="logout()">Deconectare</button>
   </div>
+  <button mat-raised-button style="margin-right:10px" (click)="openReservations()">Rezervari</button>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

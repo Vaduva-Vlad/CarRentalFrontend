@@ -1,0 +1,7 @@
+<mat-card style="margin: 20px">
+    <div class="car-grid">
+        <div *ngFor="let rezervation of rezervations" class="carlist">
+            <app-reservation-list-item [rezervation]="rezervation"></app-reservation-list-item>
+        </div>
+    </div>
+</mat-card>
