@@ -31,7 +31,12 @@ export class RegisterComponent implements OnInit {
 
     this.registerService.register(data).subscribe(response=>
       {
-        this.loginService.login({email: this.email, password: this.password}).subscribe(response => {location.reload();}); 
+        this.loginService.login({email: this.email, password: this.password}).subscribe(response => {
+        localStorage.setItem("token",response[0])
+        let user_data=response[1]
+        localStorage.setItem("user_id",user_data['id'])
+        localStorage.setItem("role_id",user_data['role_id'])
+        location.reload()}); 
     });
   }
 }
