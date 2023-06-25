@@ -26,6 +26,8 @@ import { AddCarComponent } from './add-car/add-car.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
+import { ReservationListItemComponent } from './reservation-list-item/reservation-list-item.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -40,6 +42,7 @@ import { ReservationListComponent } from './reservation-list/reservation-list.co
     RegisterComponent,
     LoginComponent,
     ReservationListComponent,
+    ReservationListItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,8 @@ import { ReservationListComponent } from './reservation-list/reservation-list.co
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

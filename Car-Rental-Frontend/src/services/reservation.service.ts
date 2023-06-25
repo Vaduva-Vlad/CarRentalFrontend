@@ -9,7 +9,8 @@ import { Reservation } from 'src/models/Reservation';
 export class ReservationService {
 
   constructor(private http: HttpClient) { }
-  url="http://localhost/CarRentalApi/public/api/reservations"
+  update_url="http://localhost/CarRentalApi/public/api/reservations"
+  by_status_url="http://localhost/CarRentalApi/public/api/reservations/byStatus/pending"
 
   addReservation(startDate:Date,endDate:Date,carId:string,userId:string):Observable<string>{
     let formData=new FormData()
@@ -22,10 +23,14 @@ export class ReservationService {
     formData.append("car_id",carId)
     formData.append("user_id",userId)
 
-    return this.http.post<string>(this.url,formData)
+    return this.http.post<string>(this.update_url,formData)
   }
 
-  getPendingReservations():Observable<Reservation[]>{
-    return this.http.get<Reservation[]>(this.url)
+  getPendingReservations():Observable<any>{
+    return this.http.get<string>(this.by_status_url);
+  }
+
+  updateReservationStatus(reservation:Reservation):Observable<Reservation>{
+    return this.http.put<Reservation>(`${this.update_url}/${reservation.id}`,reservation)
   }
 }

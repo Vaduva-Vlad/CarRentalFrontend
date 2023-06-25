@@ -1,1 +1,8 @@
-<p>reservation-list works!</p>
+<mat-card style="margin: 10vh">
+    <div class="car-grid">
+        <div *ngFor="let rezervation of rezervations" class="carlist">
+            <app-reservation-list-item [rezervation]="rezervation" style="padding:30px"></app-reservation-list-item>
+            <mat-divider></mat-divider>
+        </div>
+    </div>
+</mat-card>

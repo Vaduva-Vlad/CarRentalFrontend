@@ -29,7 +29,7 @@ export class RentalFormComponent implements OnInit {
       this.reservationService.addReservation(
         this.range.controls['start'].value ?? new Date()
       , this.range.controls['end'].value ?? new Date()
-      , this.car.id, '5').subscribe();
+      , this.car.id, localStorage.getItem("user_id")?? "0").subscribe();
       this.dialogRef.close();
     } else {
       alert('Intervalul de închiriere este invalid');

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReservationService } from 'src/services/reservation.service';
+import { Reservation } from 'src/models/Reservation';
 
 @Component({
   selector: 'app-reservation-list',
@@ -8,12 +9,15 @@ import { ReservationService } from 'src/services/reservation.service';
 })
 export class ReservationListComponent implements OnInit {
 
+  rezervations: Reservation[]=[]
+
   constructor(private reservationService:ReservationService) { }
 
   ngOnInit(): void {
+    this.getRezervations()
   }
 
-  getPendingReservations(){
-    this.reservationService.getPendingReservations().subscribe(response=>console.log(response))
+  getRezervations(){
+    this.reservationService.getPendingReservations().subscribe(result=>this.rezervations=result['data'])
   }
 }

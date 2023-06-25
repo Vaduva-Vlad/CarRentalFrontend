@@ -1,0 +1,15 @@
+<h2>
+    <mat-card-title>Car: {{rezervation?.car?.license_plate}}</mat-card-title>
+</h2>
+<h2>
+    User:{{rezervation!.user.name}}
+</h2>
+<h2>
+    From:{{rezervation?.start}}
+</h2>
+<h2>
+    To:{{rezervation?.end}}
+</h2>
+<button mat-raised-button color="primary" (click)="updateReservationStatus('approved')">Aprobă</button>
+<button mat-raised-button color="warn" (click)="updateReservationStatus('denied')">Respinge</button>
+  
