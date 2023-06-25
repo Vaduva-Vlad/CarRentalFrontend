@@ -30,4 +30,8 @@ export class CarService {
 
     return this.http.post<string>(this.url,formData)
   }
+
+  deleteCar(car_id:string):Observable<any>{
+    return this.http.delete<string>(`${this.url}/${car_id}`)
+  }
 }
