@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Reservation } from 'src/models/Reservation';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,9 @@ export class ReservationService {
     formData.append("user_id",userId)
 
     return this.http.post<string>(this.url,formData)
+  }
+
+  getPendingReservations():Observable<Reservation[]>{
+    return this.http.get<Reservation[]>(this.url)
   }
 }
