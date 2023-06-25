@@ -44,4 +44,9 @@ export class AppComponent {
     this.location.go("/reservations");
     location.reload()
   }
+
+  openCars(){
+    this.location.go("/cars");
+    location.reload()
+  }
 }

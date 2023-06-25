@@ -6,4 +6,6 @@ export interface Car{
     price:number,
     user:User,
     image_name:string
+    model:string
+    description:string
 }

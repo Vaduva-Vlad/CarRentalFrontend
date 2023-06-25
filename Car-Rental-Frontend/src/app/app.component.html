@@ -2,6 +2,7 @@
   <span style="margin-right:10px" >Car Rental</span>
   <div *ngIf="isAdmin()">
     <button mat-raised-button color="accent" (click)="openAddCarDialog()" style="margin-right:10px">Adăugare mașină</button>
+    <button mat-raised-button style="margin-right:10px" (click)="openCars()">Masini</button>
     <button mat-raised-button style="margin-right:10px" (click)="openReservations()">Rezervari</button>
   </div>
   <div *ngIf="!isLoggedIn()">

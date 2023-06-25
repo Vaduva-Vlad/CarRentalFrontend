@@ -23,8 +23,9 @@ export class CarListItemComponent implements OnInit {
       this.router.navigate([`/cars/${this.car.id}`]);
     }*/
 
-    const dialogRef=this.dialog.open(CarDetailComponent,{
-      data: {car: this.car}
+    const dialogRef=this.dialog.open(CarDetailComponent, {
+      data: {car: this.car},
+      height: '100%'
     })
   }
   ngOnInit(): void {

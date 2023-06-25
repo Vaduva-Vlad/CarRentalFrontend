@@ -1,5 +1,5 @@
 <h2>
-    <mat-card-title>Car: {{rezervation?.car?.license_plate}}</mat-card-title>
+    <mat-card-title>Car: {{rezervation?.car?.license_plate ? rezervation!.car!.license_plate.toUpperCase() : ''}}</mat-card-title>
 </h2>
 <h2>
     User:{{rezervation!.user.name}}
@@ -10,8 +10,14 @@
 <h2>
     To:{{rezervation?.end}}
 </h2>
+<h2>
 <a href="{{license}}">Vizualizare permis</a><br>
+</h2>
+<h2>
 <a href="{{personal_id}}">Vizualizare buletin</a><br>
-<button mat-raised-button color="primary" (click)="updateReservationStatus('approved')">Aprobă</button>
+</h2>
+<h2>
+<button mat-raised-button color="primary" style="margin-right: 10px;" (click)="updateReservationStatus('approved')">Aprobă</button>
 <button mat-raised-button color="warn" (click)="updateReservationStatus('denied')">Respinge</button>
+</h2>
   

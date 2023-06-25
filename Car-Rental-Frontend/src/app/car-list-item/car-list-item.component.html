@@ -1,11 +1,11 @@
-<mat-card style="width: 10vw; height:25vh;flex: 1 1 auto">
+<mat-card style="width: 10vw; height:30vh;flex: 1 1 auto">
   <mat-card-header>
-    <mat-card-title>{{ car!.license_plate }}</mat-card-title>
+    <mat-card-title>{{ car!.model }}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <img src="{{image}}" alt="Gallery Image" class="gallery-image">
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions style="bottom:20px;position: absolute;">
     <button mat-raised-button (click)="redirectToDetails()">More details</button>
   </mat-card-actions>
 </mat-card>
