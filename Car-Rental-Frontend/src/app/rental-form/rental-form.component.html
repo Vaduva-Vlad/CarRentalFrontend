@@ -13,4 +13,6 @@
     <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
 </mat-form-field>
 <br>
+<input type="file" (change)="getBuletin($event)" accept=".pdf"><br>
+<input type="file" (change)="getCarnet($event)" accept=".pdf"><br>
 <button (click)="submit()" mat-raised-button color="primary">Închiriază</button>

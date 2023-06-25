@@ -7,5 +7,7 @@ export interface Reservation{
     end:string,
     user:User,
     car:Car,
-    status:string
+    status:string,
+    driver_license:string,
+    personal_id:string
 }

@@ -28,6 +28,6 @@ export class RegisterComponent implements OnInit {
       "phone":this.phone
     }
 
-    this.registerService.register(data).subscribe(response=>console.log(response));
+    this.registerService.register(data).subscribe(response=>{});
   }
 }

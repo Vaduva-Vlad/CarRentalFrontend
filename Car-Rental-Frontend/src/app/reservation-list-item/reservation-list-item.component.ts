@@ -4,6 +4,7 @@ import { Reservation } from 'src/models/Reservation';
 import { MatDialog } from '@angular/material/dialog';
 import { CarDetailComponent } from '../car-detail/car-detail.component';
 import { ReservationService } from 'src/services/reservation.service';
+import { FileService } from 'src/services/file.service';
 
 @Component({
   selector: 'app-reservation-list-item',
@@ -12,10 +13,15 @@ import { ReservationService } from 'src/services/reservation.service';
 })
 export class ReservationListItemComponent implements OnInit {
 
-  constructor(private router: Router,private dialog:MatDialog,private reservationService:ReservationService) { }
+  constructor(private router: Router,private dialog:MatDialog,private reservationService:ReservationService,private fileService:FileService) { }
+
+  license:string|undefined
+  personal_id:string|undefined
 
   @Input() rezervation:Reservation|undefined
   ngOnInit(): void {
+    this.license=this.fileService.getLicenseURL(this.rezervation!);
+    this.personal_id=this.fileService.getIdentificationURL(this.rezervation!);
   }
 
   @Input() car:Reservation|undefined

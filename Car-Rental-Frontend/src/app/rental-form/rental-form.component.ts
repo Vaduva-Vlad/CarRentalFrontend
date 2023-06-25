@@ -12,6 +12,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class RentalFormComponent implements OnInit {
 
   car: any
+  buletin:File|undefined
+  carnet:File|undefined
   constructor(public dialogRef: MatDialogRef<RentalFormComponent>, private reservationService:ReservationService, @Inject(MAT_DIALOG_DATA) public ccar: any) {
     this.car = ccar.car;
    }
@@ -24,12 +26,20 @@ export class RentalFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getBuletin(event:any){
+    this.buletin=event.target.files[0]
+  }
+
+  getCarnet(event:any){
+    this.carnet=event.target.files[0]
+  }
+
   submit(){
     if (this.range.valid && this.range.value.start && this.range.value.end) {
       this.reservationService.addReservation(
         this.range.controls['start'].value ?? new Date()
       , this.range.controls['end'].value ?? new Date()
-      , this.car.id, localStorage.getItem("user_id")?? "0").subscribe();
+      , this.car.id, localStorage.getItem("user_id")?? "0",this.buletin!,this.carnet!).subscribe();
       this.dialogRef.close();
     } else {
       alert('Intervalul de închiriere este invalid');

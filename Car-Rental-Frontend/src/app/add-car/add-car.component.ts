@@ -23,7 +23,6 @@ export class AddCarComponent implements OnInit {
   }
 
   addCar(){
-    console.log("herer")
-    this.carService.addCar(this.license_plate!,this.price!,this.model!,this.description!,this.file!).subscribe(result=>{console.log(result);console.log("here")})
+    this.carService.addCar(this.license_plate!,this.price!,this.model!,this.description!,this.file!).subscribe(result=>{})
   }
 }

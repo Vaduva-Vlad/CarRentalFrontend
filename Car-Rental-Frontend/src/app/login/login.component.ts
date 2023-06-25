@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
     this.loginService.login(data).subscribe(response=>{
       localStorage.setItem("token",response[0])
       let user_data=response[1]
-      console.log(user_data)
       localStorage.setItem("user_id",user_data['id'])
       localStorage.setItem("role_id",user_data['role_id'])
       location.reload()

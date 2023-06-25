@@ -12,7 +12,7 @@ export class ReservationService {
   update_url="http://localhost/CarRentalApi/public/api/reservations"
   by_status_url="http://localhost/CarRentalApi/public/api/reservations/byStatus/pending"
 
-  addReservation(startDate:Date,endDate:Date,carId:string,userId:string):Observable<string>{
+  addReservation(startDate:Date,endDate:Date,carId:string,userId:string,buletin:File,carnet:File):Observable<string>{
     let formData=new FormData()
     const start = startDate.getFullYear() + "-" + (startDate.getMonth()) + "-" + startDate.getDate()  + " " +
     startDate.getHours() + ":" + startDate.getMinutes() + ":" + startDate.getSeconds();
@@ -22,7 +22,8 @@ export class ReservationService {
     formData.append("end",end)
     formData.append("car_id",carId)
     formData.append("user_id",userId)
-
+    formData.append("personal_id",buletin)
+    formData.append("driver_license",carnet)
     return this.http.post<string>(this.update_url,formData)
   }
 

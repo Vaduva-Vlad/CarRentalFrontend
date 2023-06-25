@@ -29,6 +29,5 @@ export class CarListItemComponent implements OnInit {
   }
   ngOnInit(): void {
     this.image=this.imageService.getCarImage(this.car!)
-    console.log(this.car!.image_name)
   }
 }
