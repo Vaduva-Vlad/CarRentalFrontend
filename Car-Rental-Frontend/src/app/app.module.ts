@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddCarComponent } from './add-car/add-car.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { ReservationListComponent } from './reservation-list/reservation-list.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { LoginComponent } from './login/login.component';
     AddCarComponent,
     RegisterComponent,
     LoginComponent,
+    ReservationListComponent,
   ],
   imports: [
     BrowserModule,

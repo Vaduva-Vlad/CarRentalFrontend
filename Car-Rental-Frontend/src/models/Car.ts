@@ -4,5 +4,6 @@ export interface Car{
     id:number,
     license_plate:string,
     price:number,
-    user:User
+    user:User,
+    image_name:string
 }

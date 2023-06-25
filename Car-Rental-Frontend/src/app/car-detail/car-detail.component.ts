@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CarService } from 'src/services/car.service';
 import { MatDialog,MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { RentalFormComponent } from '../rental-form/rental-form.component';
+import { ImageService } from 'src/services/image.service';
 
 
 @Component({
@@ -14,17 +15,20 @@ import { RentalFormComponent } from '../rental-form/rental-form.component';
 export class CarDetailComponent implements OnInit {
 
   car: any
+  image:string|undefined
 
   constructor(
     private route:ActivatedRoute,
     private carService:CarService,
     private dialog:MatDialog,
-     @Inject(MAT_DIALOG_DATA) public ccar: any) { 
-      this.car = ccar.car;
+    private imageService:ImageService,
+    @Inject(MAT_DIALOG_DATA) public ccar: any) { 
+    this.car = ccar.car;
     }
 
   ngOnInit(): void {
     this.getCar()
+    this.image=this.imageService.getCarImage(this.car)
   }
 
   getCar(){

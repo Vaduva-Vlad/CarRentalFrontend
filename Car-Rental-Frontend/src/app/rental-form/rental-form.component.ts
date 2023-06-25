@@ -25,7 +25,6 @@ export class RentalFormComponent implements OnInit {
   }
 
   submit(){
-    debugger;
     if (this.range.valid && this.range.value.start && this.range.value.end) {
       this.reservationService.addReservation(
         this.range.controls['start'].value ?? new Date()
